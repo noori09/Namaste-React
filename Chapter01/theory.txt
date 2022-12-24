@@ -1,0 +1,143 @@
+Q1. What is Emmet?
+Ans. Emmet is a free add-on for your text editor. It allows you to type shortcuts that are then expanded into full pieces of code.
+     Emmet uses different abbreviations and short expressions depending on what's passed, and then dynamically converts the
+     abbreviations into the full code. Emmet is mostly used for HTML, XML and CSS, but it can also be used with programming languages.
+
+Q2. Difference b/w Library & Framework?
+Ans. Both libraries and frameworks are reusable code written by someone else. Their purpose is to help you solve common problems
+     in easier way. 
+     
+     A library is like building your home from scratch, you have the choice to make your house as you wish, with any architecture you
+     like, you can sort your rooms in the way you like.
+
+     On the other hand, Framework is like buying a new house, you don't have to deal with building problems, but you can't choose how 
+     to sort your rooms because the house is already built.
+
+     The techincal difference-
+
+     The techincal difference b/w framework and library lies in a term called inversion of control. 
+     When you use a library, you are in charge of the application flow. You choose when and where to call the library.
+     When you use a framework, the framework is in charge of the flow. It provides you with a few places to plug in your code,
+     but it calls the code you plugged in as needed.
+
+     Framework Upsides- 
+
+     Usually, a framework tells us what to do, it has the best practice of doing things and provides tooling to supports us.
+     Examples- Angular & Vue
+     These frameworks created by dedicated teams, and ship with everything you need to build large scale applications.
+     These teams provide official style guides that follow best practices. Once you learn that you are immediately productive.
+     It also means that if you want to train new team members, it will be easy.
+
+     Framework Downsides-
+
+     A framework is built using a lot of code, this means longer load time and a decrease in performance.
+     Scalable architecture provides many things as we discussed above. Some applicsations are simple so using a framework
+     makes it more complicated.
+     With the framework, we have a lot to learn. In every version, new things added and others removed or deprecated so you have
+     to up-to date.
+
+     Libraries Upsides-
+
+     On the other hand, we are the one who lead libraries.
+     Examples - React, Jquery
+
+     Libraries focus only on how to use it. It gives the user the ability of picking libraries that he wants.
+     That means, we only add what we want, which makes the application smoother.
+
+     Libraries Downsides-
+
+     When you are making fun making a specific architecture, it can ruin your application, so you need to take care of itself.
+
+
+Q3. What is CDN and why do we use it?
+Ans. A CDN (Content Delivery Network), is a group of geographically distributed and interconnected servers. They provide cached
+     internet content from a network location closest to a user to speed up its delivery.
+     The main use of CDN is to deliver content through a network of servers in a secure and efficient way. These networks improve
+     the content security, performance and availability.
+
+     Benefits of CDN-
+     1) Efficiency - CDNs improve webpage loading times and reduce bounce rates. Both advantages keep users from abandoning a slow-loading
+                     site.
+     2) Security -   CDNs enhance security using WAFs and bot mitigation.
+     3) Availability - CDNs can handle more traffic and avoid network failures better than the origin server, increasing content
+                       availability.
+     4) Optimization - These networks provides a diverse mix of performance and web content Optimization services that complement
+                       cached site content.
+     5) Resource and Cost Savings - CDNs reduce bandwidth consumption and cost.
+
+
+Q4. Why is React Known as React?
+Ans. React was developed for applications that have constantly changing data. Since React is View in MVC, this means as the user
+     clicks arround and changes the app's data, the view should "react" or change with those user event.
+
+Q5. What is crossorigin in script tag?
+Ans. The HTML <script> crossorigin attribute is used for loading an external script into their domain with the support of HTTP cors
+     request. This attribute is used to protect the sensitive information from the third party while fetching out the results.
+     
+     Cross origin resource sharing (CORS) is a tool that allows web pages requesting for resources from another domain that is
+     outside of their own domain. It is also used for managing cross-origin requests which is a request for a resource from an 
+     outside domain.
+    
+     <script crossorigin="anonymous | use-credentials">
+     anonymous: It has a default value. It defines a CORS request will be sent without passing the credentials information.
+     use-credentials: A crossorigin request will be sent with credentials,cookies and certificate.
+
+Q6. What is the difference between React and ReactDOM ?
+Ans. React library is responsible for creating views and ReactDOM library is responsible to actually render UI in the browser.
+     Basically ReactDOM is the JS library that allows React to interact with the DOM.
+
+
+Q7. What is the difference between react.development.js and react.production.js files via CDN?
+Ans. Development mode includes useful warnings and gives you access to the tools that make development and debugging easier.
+     Production mode minfies your code and better represents the performance your app will have on end user's devices.
+
+
+Q8. What is async and defer?
+Ans. async and defer are boolean attributes which are used along with script tag to load the external scripts efficiently into our
+     webpage.
+     When you load a webpage there are two major things happening in the browser-
+     1) The HTML parsing.
+     2) The loading of the scripts. 
+
+     The loading of the scripts contains two parts-
+     1) Fetching the script from the network 
+     2) Actually executing the script line by line.
+
+     Case 1: By normally using script tag - 
+             <script src= "" ></script>
+             In the normal scenario, suppose your browser is loading a webpage, Suppose our browser is parsing the HTML line by line and
+             suddenly encounters the script tag, At that time browser pause the parsing of HTML and sees the script tag and then fetches the script
+             from the network and gets into the browser and runs it then and there. And after the script is fully executed the HTML parsing will be
+             continued again.
+
+             In actual, the javascript is blocking the rendering of the HTML code because we are waiting for script code to execute fully, which is
+             not a good case.
+       
+     Case 2: By using async attribute in a script tag -
+             <script async src = ""></script>
+             In case of async, meanwhile our HTML parsing is going on, Any of our script with async attribute fetched from the network asynchronously
+             along with our HTML parsing. As soon as the scripts are fetched and available in the browser, the HTML parsing stops and the scripts are
+             executed then and there. And once the script is executed the HTML parsing will continue again.
+
+             In this case also our code is blocked for a while.
+
+
+     Case 3: By using defer attribute in a script tag -
+             <script defer src=""></script>
+             In case of defer attributes, HTML parsing is going on and script are also fetched from the network parallel, and when HTML parsing is
+             completed then our scripts which were fetched earlier will be executed now.
+
+             Note: async attribute doesnot gaurantee the order of execution of the scripts. But defer does.
+                   It means if we are putting async attributes in multiple scripts which are dependent on each other, then async attribute 
+                   doesnot gaurantee that these scripts will be executed in a particular order. And that may break our code, so in this case 
+                   defer is preferable.
+                   In case if we have to load some external scripts, which are independent of our code, in this case we can use async.
+                   
+
+
+
+
+
+
+
+
