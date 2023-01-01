@@ -1,81 +1,9 @@
-Q1.  What is NPM?
-Ans- NPM is the open-source world's largest software registry. It is used for sharing and borrowing
-     packages and many organizations use npm to manage private development as well.
+Q1. What is JSX?
+Ans- JSX is javascript XML. It allows us to write HTMl like syntax in React.
 
-Q2.  What is Parcel/ Webpack? Why do we need it?
-Ans- Parcel is a module bundler. It is used for building single or multi-page React Applications.
-     It includes fast refresh, and supports JSX, Typescript.
+Q2. What are the super powers of React?
+Ans- It helps us in keeping our code simpler and elegant when writing large piece of code.
+     JSX allows react to show more useful errors and warning messages.
 
-Q3.  What is .Parcel-cache?
-Ans- Parcel caches everything it builds to disk.If we restart the dev server, Parcel will only rebuild files 
-     that have changed since the last time it ran. For ex- If we change a configuration file, all of the source
-     files that rely on the configuration will be rebuilt.
-     By default, the cache is stored in .parcel-cache folder inside our project and we should add this folder
-     into .gitignore so that it is not committed in our repo.
-
-Q4.  What is npx?
-Ans- npx- node package execute. It comes with npm above 5.2.0 version. It is an npm package runner that can execute
-     any package and if the package is already not installed it will install that automatically. We just have to use
-     npx our-package-name
-
-Q5.  What is the difference between dependencies and dev-dependencies?
-Ans- dev-dependencies are the packages a developer needs for development.
-     dependencies are the packages required by our application in production.
-
-Q6.  What is Treeshaking?
-Ans- Tree-shaking is removing the unwanted code. It is one of the features of parcel. In production builds, parcel
-     statically analyzes the imports and exports of each module, and removes everything that is not used. This is called
-     tree-shaking or dead code elimination.
-
-Q7.  What is Hot Module Replacement (HMR) ?
-Ans- When we make changes in our code, parcel automatically rebuilds the changed files and updates our app in the browser.
-     By default parcel fully reloads the page but in some cases it may perform Hot Module Replacement. HMR improves the development
-     experience by updating the modules in the browser at runtime without needing a whole page refresh. This means application state
-     can be retained as we change small things in our code. CSS changes are applied via HMR with no page reload necessary.
-
-Q8.  List down 5 features of Parcel and describe any 3.
-Ans- 1) HMR
-     2) Caching
-     3) Code Splitting-  Parcel supports zero configuration code splitting. It allows us to split our code into separate bundles
-                         which can be loaded on demand, resulting in smaller intial bundle size and faster load time. Code splitting
-                         is controlled by dynamic import syntax which works like normal import syntax but returns a promise.
-
-     4) Image Optimization-   Parcel supports resizing, converting, and optimizing images. We can use query parameter when referencing
-                              an image in HTML, CSS and Javascript to specify which format and size the image should be converted to.
-                              Resizing and converting occurs in both development and production mode.
-                              Parcel provides image optimization for JPEGs and PNGs by default in production mode, which reduces the 
-                              size of the images without affecting the quality. If we want to disable it we need to add some code in 
-                              .parcelrc config file.
-                              {
-                                   "extends": "@parcel/config-default",
-                                   "optimizers": {
-                                   "*.{jpg,jpeg,png}": []
-                                                  }
-                              }    
-     5) Minification-    Parcel includes minfiers for javascript, CSS and HTML. Minification reduces the file size of the output bundles
-                         by removing white-spaces, renaming variables to shorter names and many other optimizations.
-
-
-Q9.  What is .gitignore? What should we add and not add into it?
-Ans- The .gitignore file tells Git which files to ignore when committing our project to the Git Repo.
-     Everything which can be regenrated on server again should be in .gitignore. For ex- .parcel-cache and dist folder.
-
-Q10. What is the difference between package.json and package.lock.json?
-Ans- package.json conatins the basic information of the project like name, description, scripts and dependencies.
-     package.lock.json contains the name, dependencies and locked version of the project.
-
-Q11. Why should I not modify package.lock.json?
-Ans- It is auto-generated file and we should not modify it because its purpose is to track the entire tree of 
-     dependencies and the exact version of each dependency. we should add this file into our git repo.
-
-Q12. What is node modules? Is it good idea to push node modules into GIT?
-Ans- Node modules is a folder created by npm and a way of tracking each package which we install locally via package.json
-     We should not push node modules into GIT because it is very heavy object. And with the help of package.json and package.lock.json
-     we can easily generate node modules.
-
-Q13. What is Dist Folder?
-Ans- Dist folder contains the minimized version of source code. The code inside the dist folder is used on production.
-
-Q14. What is Browserlist?
-Ans- Browserlist is a tool in which we specify which browser should be supported by our frontend application with the help
-     of some queries in a config file.
+Q3. Role of type attribute in script tag? What options can be used?
+Ans- The type attribute specifies the type of script. It has a default value - text/javascript
