@@ -1,3 +1,41 @@
 #container{
 background-color: gray;
 }
+
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: grey;
+    min-height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchIconStyle {
+    border: none;
+    border-radius: 4px;
+    min-height: 15px;
+    min-width: 450px;
+    padding: 8px;
+    font-size: 1rem;
+}
+
+.searchIconStyle:focus-visible {
+    outline: none;
+}
+
+.userIconStyle {
+    width: 64px;
+    height: 64px;
+    padding: 16px;
+}
+
+.reactLogoStyle {
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+}
