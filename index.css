@@ -1,41 +1,38 @@
-#container{
-background-color: gray;
-}
-
-body {
-    margin: 0;
-}
-
-.header {
-    background-color: grey;
-    min-height: 100px;
+.header{
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    margin: 10px;
+    border: 1px solid black;
+    background-color: black;
+}
+.nav-items > ul{
+    list-style: none;
+    display: flex;
 }
 
-.searchIconStyle {
-    border: none;
-    border-radius: 4px;
-    min-height: 15px;
-    min-width: 450px;
-    padding: 8px;
-    font-size: 1rem;
+.nav-items >ul > li {
+    padding: 10px;
+    color: gold;
 }
 
-.searchIconStyle:focus-visible {
-    outline: none;
+.logo {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
 }
 
-.userIconStyle {
-    width: 64px;
-    height: 64px;
-    padding: 16px;
+.card {
+    width: 200px;
+    border: 1px solid black;
+    padding:10px;
+    margin: 10px;
 }
 
-.reactLogoStyle {
-    width: 48px;
-    height: 48px;
-    padding: 16px;
+.card > img {
+    width:100%;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
 }
