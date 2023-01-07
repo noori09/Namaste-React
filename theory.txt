@@ -1,9 +1,53 @@
-Q1. What is JSX?
-Ans- JSX is javascript XML. It allows us to write HTMl like syntax in React.
+Q1. Is JSX mandatory for React?
+Ans- No, JSX is not mandatory for React. It just makes it easy to write code in React apps. We can do it without using JSX as well by using
+     React.createElement
 
-Q2. What are the super powers of React?
-Ans- It helps us in keeping our code simpler and elegant when writing large piece of code.
-     JSX allows react to show more useful errors and warning messages.
+Q2. Is ES6 mandatory for React?
+Ans- It is not manadatory but its highly recommendable.
 
-Q3. Role of type attribute in script tag? What options can be used?
-Ans- The type attribute specifies the type of script. It has a default value - text/javascript
+Q3. {TitleComponent()} vs <TitleComponent/> vs <TitleComponent><TitleComponent/>?
+Ans- When a functional component is used as <TitleComponent/> it will have a lifecycle and can have a state.
+     When a function is called directly as TitleComponent(), it will just run and return something.
+     To be a component function returning JSX should be used as <TitleComponent/> and not as TitleComponent()
+
+Q4. How can i write comments in JSX?
+Ans. // -> By using ctrl + /
+
+Q5. What is <React.Fragment></React.Fragment> and <></>?
+Ans. It is a component imported by React. React.Fragment is like an empty tag so can be written like <></>.
+
+Q6. What is Virtual DOM?
+Ans. A representation of DOM with us is known as Virtual DOM. We need virtual DOM because of reconciliation.
+
+Q7. What is reconciliation?
+Ans. Reconciliation is an algorithm to diff one tree from the other and it determines what needs to be updated.
+     React uses diffing algorithm and the process is known as Reconciliation.
+
+Q8. What is React Fiber?
+Ans. In React 16, diff algorithm was changed and React Fiber was introduced. Its a new reconciliation engine which is
+     responsible for diff.
+
+Q9. Why we need keys in React? When do we need it?
+Ans. Whenever we are building same child, React will re-render everything. But if we use keys, it
+     will only render the new one. For ex- Suppose we have 4 div and 1 more div is introduced,
+     if we dont have keys, React will not know what order those divs have? So, it will re-render
+     everything.
+     If we have different nodes like div,img,body etc. at that point of time we don't need to provide
+     key because it will automatically identify by unique tag.
+
+Q10. Can we use index as key in React?
+Ans. Yes, we can use it but its not the recommended practice to do so because it can cause issues if 
+     the order of items is changed.
+
+Q11. What are props in React?
+Ans. Whatever we pass in as an attribute in component is known as props. Props is a shorthand for properties.
+     You pass in arguments and receive as parameters. 
+     For Ex- 
+     {RestaurantCard(restaurantList[0])} or {RestaurantCard restaurant={restaurantList[0]}}
+     Both are doing the same thing.
+
+Q12. What is Config Driven UI?
+Ans. When we build a Real world app we control our frontend using a config driven by backend(API)
+     For ex- Lets consider our food ordering app, in which lets assume there are 
+     three different cities Pune, Mumbai, Delhi. Now lets say we have some offers going on which are different cities
+     and we have to show the data in our frontend based on their locations. So, these things will be configured from backend.
