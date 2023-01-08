@@ -7,7 +7,6 @@
     "build": "parcel build index.html",
     "test": "jest"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/noori09/Namaste-React.git"
