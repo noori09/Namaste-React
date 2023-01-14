@@ -1,53 +1,26 @@
-Q1. Is JSX mandatory for React?
-Ans- No, JSX is not mandatory for React. It just makes it easy to write code in React apps. We can do it without using JSX as well by using
-     React.createElement
+Q1. What is the difference between Named export, Default export and * as export?
+Ans- If we do default export it is exported by default. We can write export default only once
+     in a component. Also, we can rename it in import. But good practice is to use it by same name.
+     For ex- export default Title can be imported as import Title from './component/Title'
 
-Q2. Is ES6 mandatory for React?
-Ans- It is not manadatory but its highly recommendable.
+     Second way is to export by name, named exports use name of a function or a variable as their
+     identifier. We can import it by using the same name as it was exported. We can use multiple 
+     named export inside any component.
+     For ex- export const Title = () =>{} can be imported as import {Title} from './component/Title'
 
-Q3. {TitleComponent()} vs <TitleComponent/> vs <TitleComponent><TitleComponent/>?
-Ans- When a functional component is used as <TitleComponent/> it will have a lifecycle and can have a state.
-     When a function is called directly as TitleComponent(), it will just run and return something.
-     To be a component function returning JSX should be used as <TitleComponent/> and not as TitleComponent()
+     And if we have multiple exports so we can import it using * as syntax.
+     For ex- import * as Obj from  '' and then we can use it like Obj.Title
 
-Q4. How can i write comments in JSX?
-Ans. // -> By using ctrl + /
+Q2. What is the importance of config.js file?
+Ans- Config file allows developer to customize how to interact with the application. Its a good practice to put
+     configured data in as separate file and we usually put all the hardcoded data in our config.js
+     file and it can be renamed as constants.js also.
+    
+Q3. What are React Hooks?
+Ans- React Hooks are normal javascript functions which was introduced in React 16.8. They let us use state and other
+     React features without writing a class.
 
-Q5. What is <React.Fragment></React.Fragment> and <></>?
-Ans. It is a component imported by React. React.Fragment is like an empty tag so can be written like <></>.
-
-Q6. What is Virtual DOM?
-Ans. A representation of DOM with us is known as Virtual DOM. We need virtual DOM because of reconciliation.
-
-Q7. What is reconciliation?
-Ans. Reconciliation is an algorithm to diff one tree from the other and it determines what needs to be updated.
-     React uses diffing algorithm and the process is known as Reconciliation.
-
-Q8. What is React Fiber?
-Ans. In React 16, diff algorithm was changed and React Fiber was introduced. Its a new reconciliation engine which is
-     responsible for diff.
-
-Q9. Why we need keys in React? When do we need it?
-Ans. Whenever we are building same child, React will re-render everything. But if we use keys, it
-     will only render the new one. For ex- Suppose we have 4 div and 1 more div is introduced,
-     if we dont have keys, React will not know what order those divs have? So, it will re-render
-     everything.
-     If we have different nodes like div,img,body etc. at that point of time we don't need to provide
-     key because it will automatically identify by unique tag.
-
-Q10. Can we use index as key in React?
-Ans. Yes, we can use it but its not the recommended practice to do so because it can cause issues if 
-     the order of items is changed.
-
-Q11. What are props in React?
-Ans. Whatever we pass in as an attribute in component is known as props. Props is a shorthand for properties.
-     You pass in arguments and receive as parameters. 
-     For Ex- 
-     {RestaurantCard(restaurantList[0])} or {RestaurantCard restaurant={restaurantList[0]}}
-     Both are doing the same thing.
-
-Q12. What is Config Driven UI?
-Ans. When we build a Real world app we control our frontend using a config driven by backend(API)
-     For ex- Lets consider our food ordering app, in which lets assume there are 
-     three different cities Pune, Mumbai, Delhi. Now lets say we have some offers going on which are different cities
-     and we have to show the data in our frontend based on their locations. So, these things will be configured from backend.
+Q4. Why do we need a useState Hook?
+Ans- If we write a functional component and realize that we need to add some state to it, previously we need to create
+     it to a class. Now we can use a hook inside the existing functional component. We can import useState hook using 
+     named import from React Library.
