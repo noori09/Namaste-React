@@ -1,26 +1,68 @@
-Q1. What is the difference between Named export, Default export and * as export?
-Ans- If we do default export it is exported by default. We can write export default only once
-     in a component. Also, we can rename it in import. But good practice is to use it by same name.
-     For ex- export default Title can be imported as import Title from './component/Title'
+Q1. What is a Microservice?
+Ans- Instead of having just 1 project we have small small independent projects. Now if we want to change 
+     any button we can just deploy 1 UI project. Most of the big applications are built using Microservices
+     architecture.
 
-     Second way is to export by name, named exports use name of a function or a variable as their
-     identifier. We can import it by using the same name as it was exported. We can use multiple 
-     named export inside any component.
-     For ex- export const Title = () =>{} can be imported as import {Title} from './component/Title'
 
-     And if we have multiple exports so we can import it using * as syntax.
-     For ex- import * as Obj from  '' and then we can use it like Obj.Title
+Q2. What is a Monolith architecture?
+Ans- Earlier there used to be single big app and that app had everything like APIs, UI, notifications
+     etc. and if we have to change any button, we used to deploy whole app. And this architecture is known
+     as Monolith.
 
-Q2. What is the importance of config.js file?
-Ans- Config file allows developer to customize how to interact with the application. Its a good practice to put
-     configured data in as separate file and we usually put all the hardcoded data in our config.js
-     file and it can be renamed as constants.js also.
-    
-Q3. What are React Hooks?
-Ans- React Hooks are normal javascript functions which was introduced in React 16.8. They let us use state and other
-     React features without writing a class.
 
-Q4. Why do we need a useState Hook?
-Ans- If we write a functional component and realize that we need to add some state to it, previously we need to create
-     it to a class. Now we can use a hook inside the existing functional component. We can import useState hook using 
-     named import from React Library.
+Q3. What is the difference between Monolith and Microservice?
+Ans- A monolithic application is built as a single unified unit while a microservices
+     architecture is a collection of smaller, independently deployable services. 
+
+
+Q4. Why do we need a useEffect hook?
+Ans- The useEffect hook allows us to perform side effects in our component. Some ex of side effects
+     are fetching data, updating the DOM directly. useEffect is a function, we call this function by 
+     passing another function named as callback function inside it. Whenever a component renders, 
+     it will call the function which we passed inside our useEffect. If we don't want to call it after
+     every render we can pass dependency array as a second parameter to our useEffect. We can import 
+     useEffect by using named import from React Library.
+
+
+Q5. What is Optional Chaining?
+Ans- The optional chaining operator accesses an object's property or calls a function. If the object
+     accessed or the function called is undefined or null, it returns undefined instead of throwing an
+     error.
+
+
+Q6. What is Shimmer UI?
+Ans- A shimmer UI resembels the page's actual UI, so user will get an idea of what's about to come and
+     what's happening when a page full of content/data takes more than 3-5 seconds.
+
+
+Q7. What is the difference between JS expression and JS statement?
+Ans- An expression can be assigned or used as operands, while statements can only be declared.
+
+
+Q8. What is conditional rendering? Explain with code example.
+Ans- Depending on the state value we can render some component. For ex- const [isLoggedIn, setIsLoggedIn] = useState(false)
+     so, in render() method we can add conditional rendering like
+      {isLoggedIn? 
+            <RenderComponentA></RenderComponentA>
+            :
+            <RenderComponentB></RenderComponentB>}  
+
+
+Q9. What is CORS?
+Ans- Cross-Origin Resource Sharing is a system, consisting of transmitting HTTP headers, that determines
+     whether browsers block frontend Javascript code from accessing responses for cross-origin requests.
+
+
+Q10. What is async and await?
+Ans- async and await make promises easier to write. 
+     async makes a function return a promise.
+     await makes a function wait for a promise.
+     The keyword async before a function makes the function return a promise.The await keyword can only be
+     used inside an async function.The await keyword makes the function pause the execution and wait
+     for a resolved promise before it continues 
+
+
+
+Q11. What is the use of const json = await data.json() in getRestaurants()?
+Ans- fetch basically returns readable stream and that readable stream needs to be converted into json object
+     so that we can read it.
