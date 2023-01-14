@@ -4,10 +4,6 @@ import Header from './components/Header'; //default import
 import {Body} from './components/Body';  //named import
 import Footer from './components/Footer';
 
-
-
-
-
 const AppLayout = () => {
     return (
         <>
