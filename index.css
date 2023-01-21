@@ -48,3 +48,20 @@
   margin: 16px 7px;
   cursor: pointer;
 }
+
+.shimmer-card{
+    width:235px;
+    height: 350px;
+    margin: 10px;
+    background-color: lightgrey;
+}
+
+.link-style {
+    text-decoration: none;
+    padding: 10px;
+    color: gold;
+}
+
+.menu {
+    display: flex;
+}
