@@ -1,8 +1,10 @@
 import {useState} from 'react';
+import Logo from '../assets/Img/logo.avif';
+import {Link} from 'react-router-dom'
 
 const Title = () => (
     <a href='/'>
-        <img src='https://b.zmtcdn.com/data/pictures/chains/9/18933609/9fc9eb3e9765cb039a9d13596290d400.jpeg?fit=around%7C200%3A200&crop=200%3A200%3B%2A%2C%2A'
+        <img src={Logo}
             alt="logo"
             className='logo' />
     </a>
@@ -15,9 +17,15 @@ const Header = () => {
             <Title />
             <div className='nav-items'>
                 <ul>
+                    <Link to="/" className='link-style'>
                     <li>Home</li>
+                    </Link>
+                    <Link to= '/about' className='link-style'>
                     <li>About</li>
+                    </Link> 
+                    <Link to= '/contact' className='link-style'>
                     <li>Contact</li>
+                    </Link>
                     <li>Cart</li>
                 </ul>
             </div>

@@ -1,68 +1,22 @@
-Q1. What is a Microservice?
-Ans- Instead of having just 1 project we have small small independent projects. Now if we want to change 
-     any button we can just deploy 1 UI project. Most of the big applications are built using Microservices
-     architecture.
+Q1. What are various ways to add images into our App?Explain with examples.
+Ans- 1) Using Import statements- We can import an image file directly into a component
+        and use it in our JSX.
+     2) Using the <img> tag - We can use img tag in JSX and set the src attribute to the path
+        of the image file.
 
+Q2. What will happen if we do console.log(useState())?
+Ans- It will give undefined.
 
-Q2. What is a Monolith architecture?
-Ans- Earlier there used to be single big app and that app had everything like APIs, UI, notifications
-     etc. and if we have to change any button, we used to deploy whole app. And this architecture is known
-     as Monolith.
+Q3. How will useEffect behave if we don't pass any dependency?
+Ans- It will run on every render, which can cause performance issues. So to avoid this, we pass [] as 
+     a dependency, so it will run only once after the first render.
 
+Q4. What is SPA?
+Ans- Single Page Application is a website that loads a single HTML page and dynamically updates the content
+     as the user interacts with the page, instead of loading new pages from a server.
 
-Q3. What is the difference between Monolith and Microservice?
-Ans- A monolithic application is built as a single unified unit while a microservices
-     architecture is a collection of smaller, independently deployable services. 
-
-
-Q4. Why do we need a useEffect hook?
-Ans- The useEffect hook allows us to perform side effects in our component. Some ex of side effects
-     are fetching data, updating the DOM directly. useEffect is a function, we call this function by 
-     passing another function named as callback function inside it. Whenever a component renders, 
-     it will call the function which we passed inside our useEffect. If we don't want to call it after
-     every render we can pass dependency array as a second parameter to our useEffect. We can import 
-     useEffect by using named import from React Library.
-
-
-Q5. What is Optional Chaining?
-Ans- The optional chaining operator accesses an object's property or calls a function. If the object
-     accessed or the function called is undefined or null, it returns undefined instead of throwing an
-     error.
-
-
-Q6. What is Shimmer UI?
-Ans- A shimmer UI resembels the page's actual UI, so user will get an idea of what's about to come and
-     what's happening when a page full of content/data takes more than 3-5 seconds.
-
-
-Q7. What is the difference between JS expression and JS statement?
-Ans- An expression can be assigned or used as operands, while statements can only be declared.
-
-
-Q8. What is conditional rendering? Explain with code example.
-Ans- Depending on the state value we can render some component. For ex- const [isLoggedIn, setIsLoggedIn] = useState(false)
-     so, in render() method we can add conditional rendering like
-      {isLoggedIn? 
-            <RenderComponentA></RenderComponentA>
-            :
-            <RenderComponentB></RenderComponentB>}  
-
-
-Q9. What is CORS?
-Ans- Cross-Origin Resource Sharing is a system, consisting of transmitting HTTP headers, that determines
-     whether browsers block frontend Javascript code from accessing responses for cross-origin requests.
-
-
-Q10. What is async and await?
-Ans- async and await make promises easier to write. 
-     async makes a function return a promise.
-     await makes a function wait for a promise.
-     The keyword async before a function makes the function return a promise.The await keyword can only be
-     used inside an async function.The await keyword makes the function pause the execution and wait
-     for a resolved promise before it continues 
-
-
-
-Q11. What is the use of const json = await data.json() in getRestaurants()?
-Ans- fetch basically returns readable stream and that readable stream needs to be converted into json object
-     so that we can read it.
+Q5. What is the difference between client side and server-side routing?
+Ans- In client side routing- The routing logic is executed on the client side, when a user navigates from
+     one url to other, its webpage responsibility to determine which data needs to be displayed
+     Whereas, in Server side routing- The routing logic is executed on the server side. So, the browse sends
+     the request to the server for data.
