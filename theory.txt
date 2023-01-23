@@ -1,22 +1,55 @@
-Q1. What are various ways to add images into our App?Explain with examples.
-Ans- 1) Using Import statements- We can import an image file directly into a component
-        and use it in our JSX.
-     2) Using the <img> tag - We can use img tag in JSX and set the src attribute to the path
-        of the image file.
+Q1. How do you create Nested Routes react-router-dom configuration?
+Ans- We can create nested routes by adding children in react-router-dom configuration.
+     Ex- const appRouter = createBrowserRouter([
+     {
+        path: "/",
+        element: <AppLayout />,
+        errorElement: <Error />,
+        children: [
+            {
+                path: "/",
+                element: <Body />
+            },
+            {
+                path: "/about",
+                element: <About />
+            }
+            ]
+     }
+      And we have to use Outlet because whatever children we have all will go inside Outlet.
 
-Q2. What will happen if we do console.log(useState())?
-Ans- It will give undefined.
+Q2. What is createHashRouter, createMemoryRouter?
+Ans- createHashRouter- This router is usable if we are unable to configure our web server to direct
+                       all traffic to react router application. Instead of using normal URLs, it will
+                       use the # portion of the URL to manage the application URL.
+     
+     createMemoryRouter- Instead of using browsers history a memory router manages its own history stack
+                         in the memory. Its primary useful for testing and component development tools 
+                         like storybook, but can also be used for running React Router in any non-browser
+                         environment.
 
-Q3. How will useEffect behave if we don't pass any dependency?
-Ans- It will run on every render, which can cause performance issues. So to avoid this, we pass [] as 
-     a dependency, so it will run only once after the first render.
+Q3. What is the order of Lifecycle method calls in class based components?
+Ans- Every component goes through three phases that are Mounting, Updating and Unmounting. These methods
+     are called in following order-
+     1) constructor
+     2) getDerivedStateFromProps
+     3) render()
+     4) componentDidMount()
 
-Q4. What is SPA?
-Ans- Single Page Application is a website that loads a single HTML page and dynamically updates the content
-     as the user interacts with the page, instead of loading new pages from a server.
+Q4. Why do we use componentDidMount?
+Ans- componentDidMount is invoked immediately after a component is mounted. If we need to load data from
+     a remote endpoint, this is the good place to write that code. This place is also good for placing any
+     subscriptions which we can unsubscribe in componentWillUnmount.
 
-Q5. What is the difference between client side and server-side routing?
-Ans- In client side routing- The routing logic is executed on the client side, when a user navigates from
-     one url to other, its webpage responsibility to determine which data needs to be displayed
-     Whereas, in Server side routing- The routing logic is executed on the server side. So, the browse sends
-     the request to the server for data.
+Q5. Why do we use componentWillUnmount? Show Example.
+Ans- componentWillUnmount is invoked immediately before the component is unmounted and destroyed.
+     We can perform any necessary cleanup in this method, such as invalidating the timers, canceling
+     network requests, or cleaning up any subscriptions that were created in componentWillUnmount.
+
+Q6. Why do we use super(props) in constructor?
+Ans- super(props) basically allows accessing this.props in a constructor function. super() fn calls the
+     constructor of the parents class. When we call this super(props), we are basically calling the constructor of React.Component
+
+Q7. Why can't we have the callback function of useEffect async?
+Ans- Because React's useEffect expects a cleanup function returned from it which is called when the component
+     unmounts. Using a async fn will cause a bug as the cleanup fn will never get called.
