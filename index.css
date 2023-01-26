@@ -65,3 +65,8 @@
 .menu {
     display: flex;
 }
+
+.body-link-style {
+    all:unset;
+    display: flex;
+}
