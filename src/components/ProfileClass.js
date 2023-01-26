@@ -20,21 +20,21 @@ console.log("Child-constructor "+  this.props.name)
 //     //we can make api calls in componentdidMount
 //     console.log("Child-componentdidMount "+  this.props.name)
 // }
-// async componentDidMount(){
-//     const data = await fetch('https://api.github.com/users/noori09')
-//     const json = await data.json();
-//     console.log(json)
-//     this.setState({
-//         userInfo:json
-//     })
-//     console.log("Child-componentdidMount "+  this.props.name)
-// }
- componentDidMount(){
-   this.timer=setInterval(()=>{
-        console.log("Namaste React OP")
-    },1000)
-    console.log("Child-componentdidMount ")
+async componentDidMount(){
+    const data = await fetch('https://api.github.com/users/noori09')
+    const json = await data.json();
+    console.log(json)
+    this.setState({
+        userInfo:json
+    })
+    console.log("Child-componentdidMount "+  this.props.name)
 }
+//  componentDidMount(){
+//    this.timer=setInterval(()=>{
+//         console.log("Namaste React OP")
+//     },1000)
+//     console.log("Child-componentdidMount ")
+// }
 
 componentDidUpdate(){
     console.log("component did update")
