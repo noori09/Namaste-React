@@ -51,7 +51,7 @@ export const Body = () => {
                 {filteredRestaurants.length === 0 ? <h1>No Restaurant Matches Your Filter</h1> :
                     filteredRestaurants.map((restaurant) => {
                         return (
-                            <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id}>
+                            <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id} className="body-link-style">
                                 <RestaurantCard {...restaurant.data} />
                             </Link>
                         )
