@@ -1,14 +1,25 @@
-import React from 'react';
+import React , {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header'; //default import
 import { Body } from './components/Body';  //named import
 import Footer from './components/Footer';
-import About from './components/About';
 import Error from './components/Error';
 import Contact from './components/Contact';
 import Profile from './components/Profile';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import RestaurantMenu from './components/RestaurantMenu';
+import Shimmer from './components/Shimmer';
+
+//Chunking
+//Code Splitting
+//Dynamic Imports
+//lazy loading
+//On demand load
+//Dynamic Bundling
+
+const Instamart = lazy(()=>import("./components/Instamart"));
+const About = lazy(()=>import("./components/About"));
+//Upon on demand loading ->upon render->react will suspend the loading
 
 const AppLayout = () => {
     return (
@@ -33,7 +44,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />,
+                element: <Suspense fallback={<Shimmer/>}><About /></Suspense>,
                 children:[
                     {
                         path:"profile",    //when we put slash react-router-dom will consider it as localhost:1234/profile, so we will not provide slash here it will take parent's path and add profile to it.
@@ -48,6 +59,10 @@ const appRouter = createBrowserRouter([
             {
                 path:"/restaurant/:id",
                 element:<RestaurantMenu/>
+            },
+            {
+                path:"instamart",
+                element: <Suspense fallback={<Shimmer/>}><Instamart/></Suspense>
             }
         ]
     },

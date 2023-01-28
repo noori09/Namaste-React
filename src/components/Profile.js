@@ -1,11 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 const Profile = (props)=>{
     const[count,setCount] = useState(0);
-    useEffect(()=>{
-        //Great place to do API call because it runs after every render
-        // console.log("useEffect")
-    })
-    // console.log("render fn")
     return (
         <div>
             <h2>Profile Component</h2>
@@ -17,6 +12,3 @@ const Profile = (props)=>{
 }
 
 export default Profile;
-
-
-//First render and then useEffect
