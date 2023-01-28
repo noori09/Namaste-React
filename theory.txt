@@ -1,55 +1,55 @@
-Q1. How do you create Nested Routes react-router-dom configuration?
-Ans- We can create nested routes by adding children in react-router-dom configuration.
-     Ex- const appRouter = createBrowserRouter([
-     {
-        path: "/",
-        element: <AppLayout />,
-        errorElement: <Error />,
-        children: [
-            {
-                path: "/",
-                element: <Body />
-            },
-            {
-                path: "/about",
-                element: <About />
-            }
-            ]
-     }
-      And we have to use Outlet because whatever children we have all will go inside Outlet.
+Q1. When and Why do we need lazy()?
+Ans- We should use lazy() when we need to load the component asynchronously. React.lazy() fn allows us to render the dynamic
+     import as a normal component. It is used to increase application's performance by reducing initial loading time. Loading
+     less javascript code to the browser will reduce the DOM load time and boosts the performance of the application.
 
-Q2. What is createHashRouter, createMemoryRouter?
-Ans- createHashRouter- This router is usable if we are unable to configure our web server to direct
-                       all traffic to react router application. Instead of using normal URLs, it will
-                       use the # portion of the URL to manage the application URL.
+
+Q2. What is Suspense?
+Ans- A component built with React.lazy() is only loaded when it is required to be displayed. While the lazy component is loading,
+     we should show some form of placeholder content, such as loader. Suspense let's us display a fallback until its children have
+     finished loading.
+
+
+Q3. Why we got this error : A component suspended while responding to synchronous input. This will cause thr UI to be replaced with
+    a loading indicator. TO fix, updates that suspend should be wrapped with startTransition ? How does suspense fix this error ?
+
+Ans- When a component is suspended, it means it is waiting for some sort of asynchronous data to be fetched before it can continue
+     rendering.Wrapping updates that are causing the component to suspend with the startTransition function will help fix this error. 
+     This function allows us to manually control the suspending behavior of a component,rather than relying on React's automatic handling.
+     Suspense is a way to handle loading states of components that are waiting on some async data to be loaded, it allows you to specify a
+     fallback component to be rendered when a component is waiting for data. This fallback component will be displayed
+     until the component is ready to be rendered with its data.
+
+Q4. Advantages and disadvantages to use code splitting pattern?
+Ans- Advantages of using code splitting include:
+     1) Improved load times: By only loading the code that is needed for a specific page or feature,
+        code splitting can greatly reduce the initial load time of the application. This can be especially beneficial
+        for users on slow internet connections or for applications with large code bases.
+
+     2) Reduced bundle size: By splitting code into smaller chunks, the overall size of the JavaScript bundle is reduced,
+        which can improve the load time and performance of the application.
+
+     3) Increased caching efficiency: By splitting code into smaller chunks, the browser is able to cache more
+        of the application's code, which can reduce the amount of data that needs to be downloaded on subsequent
+        visits to the application.
+
+     4) Reusability: Code splitting allows for individual chunks of code to be reused across different parts of the application,
+        which can improve code maintainability and reduce duplication.
+
      
-     createMemoryRouter- Instead of using browsers history a memory router manages its own history stack
-                         in the memory. Its primary useful for testing and component development tools 
-                         like storybook, but can also be used for running React Router in any non-browser
-                         environment.
+     Disadvantages of using code splitting include:
 
-Q3. What is the order of Lifecycle method calls in class based components?
-Ans- Every component goes through three phases that are Mounting, Updating and Unmounting. These methods
-     are called in following order-
-     1) constructor
-     2) getDerivedStateFromProps
-     3) render()
-     4) componentDidMount()
+     1) Increased complexity: Code splitting requires more upfront planning and can add complexity to the build process
+        and application structure.
 
-Q4. Why do we use componentDidMount?
-Ans- componentDidMount is invoked immediately after a component is mounted. If we need to load data from
-     a remote endpoint, this is the good place to write that code. This place is also good for placing any
-     subscriptions which we can unsubscribe in componentWillUnmount.
+     2) Increased development time: Code splitting requires developers to manually split the code into smaller chunks
+        and can add additional development time.
 
-Q5. Why do we use componentWillUnmount? Show Example.
-Ans- componentWillUnmount is invoked immediately before the component is unmounted and destroyed.
-     We can perform any necessary cleanup in this method, such as invalidating the timers, canceling
-     network requests, or cleaning up any subscriptions that were created in componentWillUnmount.
+     3) Increased bundle size for larger applications: If the application has many pages or features, the total size of the
+      JavaScript bundle may still be large, even if it is split into smaller chunks.
 
-Q6. Why do we use super(props) in constructor?
-Ans- super(props) basically allows accessing this.props in a constructor function. super() fn calls the
-     constructor of the parents class. When we call this super(props), we are basically calling the constructor of React.Component
+     4) Increased maintenance: With code splitting, it is necessary to ensure that all the chunks are loaded and executed
+        in the right order, which can add complexity to the application and make it more difficult to maintain.
 
-Q7. Why can't we have the callback function of useEffect async?
-Ans- Because React's useEffect expects a cleanup function returned from it which is called when the component
-     unmounts. Using a async fn will cause a bug as the cleanup fn will never get called.
+
+
