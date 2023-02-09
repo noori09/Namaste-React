@@ -10,23 +10,13 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import RestaurantMenu from './components/RestaurantMenu';
 import Shimmer from './components/Shimmer';
 
-//Chunking
-//Code Splitting
-//Dynamic Imports
-//lazy loading
-//On demand load
-//Dynamic Bundling
-
 const Instamart = lazy(()=>import("./components/Instamart"));
 const About = lazy(()=>import("./components/About"));
-//Upon on demand loading ->upon render->react will suspend the loading
 
 const AppLayout = () => {
     return (
         <>
             <Header />
-            {/* This is needed if we are doing nested routing. Whatever children we have in
-            config, all will go into outlet acc to route */}
             <Outlet/>   
             <Footer />
         </>
@@ -47,8 +37,8 @@ const appRouter = createBrowserRouter([
                 element: <Suspense fallback={<Shimmer/>}><About /></Suspense>,
                 children:[
                     {
-                        path:"profile",    //when we put slash react-router-dom will consider it as localhost:1234/profile, so we will not provide slash here it will take parent's path and add profile to it.
-                        element:<Profile/>  //we need to create a outlet in its parent comp i.e. inside about
+                        path:"profile",   
+                        element:<Profile/>
                     }
                 ]
             },

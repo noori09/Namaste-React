@@ -12,7 +12,7 @@ const RestaurantMenu = () => {
     return !restaurant ? (
         <Shimmer />
       ) :(
-        <div className="menu">
+        <div className='flex'>
             <div>
             <h1>Restaurant Id : {id}</h1>
             <h2>{restaurant?.name}</h2>

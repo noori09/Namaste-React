@@ -18,7 +18,7 @@ const useAllRestaurantsList = ()=>{
     }
 
     return{
-        filteredRestaurants,allRestaurants
+        filteredRestaurants,allRestaurants,setFilteredRestaurants
     }
 }
 

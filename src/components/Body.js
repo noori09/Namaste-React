@@ -4,39 +4,37 @@ import Shimmer from "./Shimmer"
 import {Link} from 'react-router-dom'
 import { filterData } from "../utils/helper"
 import useAllRestaurantsList from "../utils/useAllRestaurantsList"
-import useOnline from "../utils/useOnline"
 
 export const Body = () => {
     const [searchText, setSearchText] = useState("")
-    const {filteredRestaurants,allRestaurants} = useAllRestaurantsList();
+    const {filteredRestaurants,allRestaurants,setFilteredRestaurants} = useAllRestaurantsList();
    
     //early return
     if (!allRestaurants) return null;
     return (allRestaurants.length === 0) ? <Shimmer /> : (
         <>
-            <div className="search-container">
+            <div className="p-5 bg-purple-100 my-5">
                 <input
                     type="text"
-                    className="search-input"
+                    className="placeholder:text-black p-2 m-2 focus:outline-none focus:border-solid-2 focus:outline-purple-700"
                     placeholder="Search"
                     value={searchText}
                     onChange={(e) => setSearchText(e.target.value)}>
                 </input>
                 <button
-                    className="search-btn"
+                    className="p-2 m-2 text-white font-bold bg-purple-700 rounded-lg"
                     onClick={() => {
-                        //need to filter data
                         const data = filterData(searchText, allRestaurants)
                         setFilteredRestaurants(data);
                     }}
                 >
                     Search</button>
             </div>
-            <div className='restaurant-list'>
+            <div className='flex flex-wrap'>
                 {filteredRestaurants.length === 0 ? <h1>No Restaurant Matches Your Filter</h1> :
                     filteredRestaurants.map((restaurant) => {
                         return (
-                            <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id} className="body-link-style">
+                            <Link to={"/restaurant/" + restaurant.data.id} key={restaurant.data.id} className="flex">
                                 <RestaurantCard {...restaurant.data} />
                             </Link>
                         )
