@@ -1,13 +1,15 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import RestaurantCard from "./RestaurantCard"
 import Shimmer from "./Shimmer"
 import {Link} from 'react-router-dom'
 import { filterData } from "../utils/helper"
 import useAllRestaurantsList from "../utils/useAllRestaurantsList"
+import UserContext from "../utils/UserContext"
 
 export const Body = () => {
     const [searchText, setSearchText] = useState("")
     const {filteredRestaurants,allRestaurants,setFilteredRestaurants} = useAllRestaurantsList();
+    const {user, setUser} = useContext(UserContext);
    
     //early return
     if (!allRestaurants) return null;
@@ -29,6 +31,7 @@ export const Body = () => {
                     }}
                 >
                     Search</button>
+                <input value ={user.name} onChange={(e)=>{setUser({name:e.target.value})}} ></input>
             </div>
             <div className='flex flex-wrap'>
                 {filteredRestaurants.length === 0 ? <h1>No Restaurant Matches Your Filter</h1> :

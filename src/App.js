@@ -1,4 +1,4 @@
-import React , {lazy, Suspense} from 'react';
+import React , {lazy, Suspense, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import Header from './components/Header'; //default import
 import { Body } from './components/Body';  //named import
@@ -9,17 +9,23 @@ import Profile from './components/Profile';
 import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import RestaurantMenu from './components/RestaurantMenu';
 import Shimmer from './components/Shimmer';
+import UserContext from './utils/UserContext';
 
 const Instamart = lazy(()=>import("./components/Instamart"));
 const About = lazy(()=>import("./components/About"));
 
 const AppLayout = () => {
+    const [user,setUser] = useState({
+        name:"Noori Mehta",
+        email:"noori@gmail.com"
+    })
     return (
-        <>
+        //in provider we can override the default value
+        <UserContext.Provider value={{user:user,setUser:setUser}}>
             <Header />
             <Outlet/>   
             <Footer />
-        </>
+        </UserContext.Provider>
     )
 }
 const appRouter = createBrowserRouter([

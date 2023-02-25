@@ -1,55 +1,14 @@
-Q1. When and Why do we need lazy()?
-Ans- We should use lazy() when we need to load the component asynchronously. React.lazy() fn allows us to render the dynamic
-     import as a normal component. It is used to increase application's performance by reducing initial loading time. Loading
-     less javascript code to the browser will reduce the DOM load time and boosts the performance of the application.
+Q1. What is Prop- Drilling?
+Ans- When we pass the data from parent to child and then to its child and so on. This process is known as
+     prop-drillling.
 
+Q2. What is lifting the state up?
+Ans- When we give the control of child components to its parent component. The process is known as lifting the
+     state up.
 
-Q2. What is Suspense?
-Ans- A component built with React.lazy() is only loaded when it is required to be displayed. While the lazy component is loading,
-     we should show some form of placeholder content, such as loader. Suspense let's us display a fallback until its children have
-     finished loading.
+Q3. What is Context Provider & Context Consumer?
+Ans- Context Provider is basically used to override the default value of the context. Context Consumer is used
+     in class based components , if we want to use the value of context inside it.
 
-
-Q3. Why we got this error : A component suspended while responding to synchronous input. This will cause thr UI to be replaced with
-    a loading indicator. TO fix, updates that suspend should be wrapped with startTransition ? How does suspense fix this error ?
-
-Ans- When a component is suspended, it means it is waiting for some sort of asynchronous data to be fetched before it can continue
-     rendering.Wrapping updates that are causing the component to suspend with the startTransition function will help fix this error. 
-     This function allows us to manually control the suspending behavior of a component,rather than relying on React's automatic handling.
-     Suspense is a way to handle loading states of components that are waiting on some async data to be loaded, it allows you to specify a
-     fallback component to be rendered when a component is waiting for data. This fallback component will be displayed
-     until the component is ready to be rendered with its data.
-
-Q4. Advantages and disadvantages to use code splitting pattern?
-Ans- Advantages of using code splitting include:
-     1) Improved load times: By only loading the code that is needed for a specific page or feature,
-        code splitting can greatly reduce the initial load time of the application. This can be especially beneficial
-        for users on slow internet connections or for applications with large code bases.
-
-     2) Reduced bundle size: By splitting code into smaller chunks, the overall size of the JavaScript bundle is reduced,
-        which can improve the load time and performance of the application.
-
-     3) Increased caching efficiency: By splitting code into smaller chunks, the browser is able to cache more
-        of the application's code, which can reduce the amount of data that needs to be downloaded on subsequent
-        visits to the application.
-
-     4) Reusability: Code splitting allows for individual chunks of code to be reused across different parts of the application,
-        which can improve code maintainability and reduce duplication.
-
-     
-     Disadvantages of using code splitting include:
-
-     1) Increased complexity: Code splitting requires more upfront planning and can add complexity to the build process
-        and application structure.
-
-     2) Increased development time: Code splitting requires developers to manually split the code into smaller chunks
-        and can add additional development time.
-
-     3) Increased bundle size for larger applications: If the application has many pages or features, the total size of the
-      JavaScript bundle may still be large, even if it is split into smaller chunks.
-
-     4) Increased maintenance: With code splitting, it is necessary to ensure that all the chunks are loaded and executed
-        in the right order, which can add complexity to the application and make it more difficult to maintain.
-
-
-
+Q4. If you don't pass the value to a provider does it take the default value?
+Ans- No, it will throw an error, passing a value is mandatory in the Provider.
